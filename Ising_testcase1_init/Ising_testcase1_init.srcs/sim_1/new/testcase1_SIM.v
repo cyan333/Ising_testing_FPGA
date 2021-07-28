@@ -47,9 +47,9 @@ initial begin
 fpga_reset = 1'b0;
 #5;
 fpga_reset = 1'b1;
-
 #5;
 fpga_reset = 1'b0;
-
 end
+
+
 endmodule
