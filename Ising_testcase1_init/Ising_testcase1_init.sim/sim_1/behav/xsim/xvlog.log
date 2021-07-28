@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.gen/sources_1/ip/clk_core/clk_core_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_core_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.gen/sources_1/ip/clk_core/clk_core.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_core
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase1_teststructure.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testcase1_teststructure
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sim_1/new/testcase1_SIM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testcase1_teststructure_tb

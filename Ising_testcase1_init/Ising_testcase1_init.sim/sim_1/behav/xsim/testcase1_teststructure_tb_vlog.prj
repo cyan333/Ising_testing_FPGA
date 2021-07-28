@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Ising_testcase1_init.gen/sources_1/ip/clk_core" \
+"../../../../Ising_testcase1_init.gen/sources_1/ip/clk_core/clk_core_clk_wiz.v" \
+"../../../../Ising_testcase1_init.gen/sources_1/ip/clk_core/clk_core.v" \
+"../../../../Ising_testcase1_init.srcs/sources_1/new/testcase1_teststructure.v" \
+"../../../../Ising_testcase1_init.srcs/sim_1/new/testcase1_SIM.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
