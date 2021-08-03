@@ -62,7 +62,8 @@ module testcase2_main(
     parameter SCAN_WRITE = 1;
     parameter DISABLE_SCAN_WRITE = 2;
     parameter SCAN_READ = 3;
-
+    parameter DISABLE_SCAN_READ = 4;
+    
     parameter read_maxRow = 2;
     
     
@@ -141,12 +142,12 @@ module testcase2_main(
            nextState = IDLE;
         end
         else begin
-            if(read_write_flag) begin
-                read_write_flag = 1;
+            if(!read_write_flag) begin
+                
                 nextState = SCAN_WRITE;
             end
             else begin
-                read_write_flag = 0;
+                
                 nextState = SCAN_READ;
             end
         end
@@ -165,16 +166,23 @@ module testcase2_main(
         else nextState = DISABLE_SCAN_WRITE;
     end
     SCAN_READ: begin
-        if(scan_done == 1'b1) nextState = IDLE;
-        else nextState = SCAN_READ;
+        if(scan_counter < 10) begin
+            nextState = SCAN_READ;
+        end
+        else begin
+            nextState = DISABLE_SCAN_WRITE;
+        end
+        
     end
-    
+    DISABLE_SCAN_READ: begin
+        if(scan_done == 1'b1) nextState = IDLE;
+        else nextState = DISABLE_SCAN_READ;
+    end
     endcase
     end
     
     always @ (posedge sys_clk or posedge fpga_reset) begin
-    case (currentState) 
-    IDLE: begin
+    if(fpga_reset) begin
         PCHR_fromMain <= 1;
         WE_fromMain <= 0;
         SA_EN_fromMain <= 0;
@@ -192,30 +200,64 @@ module testcase2_main(
         scan_counter <= 0;
         currentReadRow <= 5'd0;
         latch_J <= 0;
-
+        
+        idle_counter <= 0;
     end
-    SCAN_WRITE: begin
-        writeORread <= 0;
-        startScan <= 1'b1;
-        if(scan_counter < 10) begin
+    else begin
+        case (currentState) 
+        IDLE: begin
+            PCHR_fromMain <= 1;
+            WE_fromMain <= 0;
+            SA_EN_fromMain <= 0;
+            WBACK <= 0;
+            RBL_EN_normal <= 0;
+            RBL_bar_EN_normal <= 0;
+            REF_CTRL_WL <= 0;
+            writeORread <= 0;
+            DRAM_EN_fromMain <= 0;
+            normalORIsing <= 0;
+            Y_ADDR_fromMain <= 6'b0;
+            finish_spin_update <= 0;
+            spin_update_EN <= 0;
+            startScan <= 1'b0;
+            scan_counter <= 0;
+            currentReadRow <= 5'd0;
+            latch_J <= 0;
+            
+            idle_counter <= idle_counter + 1;
+            
+        end
+        
+        SCAN_WRITE: begin
+            read_write_flag = 1;
+            idle_counter <= 0;
+            writeORread <= 0;
+            startScan <= 1'b1;
             scan_counter <= scan_counter + 1;
         end
-        else begin
+        
+        DISABLE_SCAN_WRITE: begin
+            startScan <= 1'b0;
+            scan_counter <= 0;
+    
+        end
+        
+        SCAN_READ: begin
+            read_write_flag = 0;
+            idle_counter <= 0;
+            writeORread <= 1;
+            normalORIsing <= 0;
+            startScan <= 1;
+            scan_counter <= scan_counter + 1;
+        end
+        
+        DISABLE_SCAN_READ: begin
+            startScan <= 1'b0;
             scan_counter <= 0;
         end
+    
+        endcase
     end
-    DISABLE_SCAN_WRITE: begin
-        startScan <= 1'b0;
-        scan_counter <= 0;
-
-    end
-    SCAN_READ: begin
-        writeORread <= 1;
-        normalORIsing <= 0;
-        startScan <= 1;
-    end
-
-    endcase
     end
     
     

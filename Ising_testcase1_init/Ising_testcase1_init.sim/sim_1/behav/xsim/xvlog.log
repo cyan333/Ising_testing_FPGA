@@ -6,6 +6,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Tes
 INFO: [VRFC 10-311] analyzing module scan_module
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase2_main.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testcase2_main
-INFO: [VRFC 10-2458] undeclared symbol update_clk_EN, assumed default net type wire [C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase2_main.v:121]
+INFO: [VRFC 10-2458] undeclared symbol update_clk_EN, assumed default net type wire [C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase2_main.v:123]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sim_1/new/testcase2_main_SIM.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testcase2_main_SIM
