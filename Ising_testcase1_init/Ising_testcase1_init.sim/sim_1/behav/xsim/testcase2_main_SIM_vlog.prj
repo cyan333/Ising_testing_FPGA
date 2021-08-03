@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../Ising_testcase1_init.gen/sources_1/ip/sysclk_and_scan_clk" --include "../../../../Ising_testcase1_init.gen/sources_1/ip/clk_core" \
+"../../../../Ising_testcase1_init.gen/sources_1/ip/sysclk_and_scan_clk/sysclk_and_scan_clk_clk_wiz.v" \
+"../../../../Ising_testcase1_init.gen/sources_1/ip/sysclk_and_scan_clk/sysclk_and_scan_clk.v" \
+"../../../../Ising_testcase1_init.srcs/sources_1/new/scan_module.v" \
+"../../../../Ising_testcase1_init.srcs/sources_1/new/testcase2_main.v" \
+"../../../../Ising_testcase1_init.srcs/sim_1/new/testcase2_main_SIM.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
