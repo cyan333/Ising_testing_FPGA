@@ -1,0 +1,3 @@
+clock_scan_sys_clk_wiz.v,verilog,xil_defaultlib,../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys/clock_scan_sys_clk_wiz.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+clock_scan_sys.v,verilog,xil_defaultlib,../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys/clock_scan_sys.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
+glbl.v,Verilog,xil_defaultlib,glbl.v

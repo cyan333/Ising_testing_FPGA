@@ -1,3 +1,0 @@
-sysclk_and_scan_clk_clk_wiz.v,verilog,xil_defaultlib,../../../../Ising_testcase1_init.gen/sources_1/ip/sysclk_and_scan_clk/sysclk_and_scan_clk_clk_wiz.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
-sysclk_and_scan_clk.v,verilog,xil_defaultlib,../../../../Ising_testcase1_init.gen/sources_1/ip/sysclk_and_scan_clk/sysclk_and_scan_clk.v,incdir="$ref_dir/../../../ipstatic"incdir="../../../ipstatic"
-glbl.v,Verilog,xil_defaultlib,glbl.v

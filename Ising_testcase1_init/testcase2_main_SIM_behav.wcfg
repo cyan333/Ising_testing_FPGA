@@ -11,74 +11,38 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="8000001fs"></ZoomEndTime>
-      <Cursor1Time time="8000000fs"></Cursor1Time>
+      <ZoomStartTime time="11213334fs"></ZoomStartTime>
+      <ZoomEndTime time="13988335fs"></ZoomEndTime>
+      <Cursor1Time time="12270000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="101"></ValueColumnWidth>
+      <ValueColumnWidth column_width="81"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
+   <WVObjectSize size="37" />
    <wvobject fp_name="/testcase2_main_SIM/sys_clk" type="logic">
       <obj_property name="ElementShortName">sys_clk</obj_property>
       <obj_property name="ObjectShortName">sys_clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/PCHR" type="logic">
-      <obj_property name="ElementShortName">PCHR</obj_property>
-      <obj_property name="ObjectShortName">PCHR</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/WE" type="logic">
-      <obj_property name="ElementShortName">WE</obj_property>
-      <obj_property name="ObjectShortName">WE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/DRAM_NormalMode_EN" type="logic">
-      <obj_property name="ElementShortName">DRAM_NormalMode_EN</obj_property>
-      <obj_property name="ObjectShortName">DRAM_NormalMode_EN</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/Y_ADDR" type="array">
       <obj_property name="ElementShortName">Y_ADDR[5:0]</obj_property>
       <obj_property name="ObjectShortName">Y_ADDR[5:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/SA_EN" type="logic">
-      <obj_property name="ElementShortName">SA_EN</obj_property>
-      <obj_property name="ObjectShortName">SA_EN</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/WBACK" type="logic">
-      <obj_property name="ElementShortName">WBACK</obj_property>
-      <obj_property name="ObjectShortName">WBACK</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/normalORIsing" type="logic">
-      <obj_property name="ElementShortName">normalORIsing</obj_property>
-      <obj_property name="ObjectShortName">normalORIsing</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/RBL_EN_normal" type="logic">
-      <obj_property name="ElementShortName">RBL_EN_normal</obj_property>
-      <obj_property name="ObjectShortName">RBL_EN_normal</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/RBL_bar_EN_normal" type="logic">
-      <obj_property name="ElementShortName">RBL_bar_EN_normal</obj_property>
-      <obj_property name="ObjectShortName">RBL_bar_EN_normal</obj_property>
+   <wvobject fp_name="/testcase2_main_SIM/X_ADDR" type="array">
+      <obj_property name="ElementShortName">X_ADDR[6:0]</obj_property>
+      <obj_property name="ObjectShortName">X_ADDR[6:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/REF_CTRL_WL" type="logic">
       <obj_property name="ElementShortName">REF_CTRL_WL</obj_property>
       <obj_property name="ObjectShortName">REF_CTRL_WL</obj_property>
    </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/apply_E_field" type="logic">
-      <obj_property name="ElementShortName">apply_E_field</obj_property>
-      <obj_property name="ObjectShortName">apply_E_field</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/E_field" type="logic">
-      <obj_property name="ElementShortName">E_field</obj_property>
-      <obj_property name="ObjectShortName">E_field</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/POSNEG_OR_ALLPOS" type="logic">
-      <obj_property name="ElementShortName">POSNEG_OR_ALLPOS</obj_property>
-      <obj_property name="ObjectShortName">POSNEG_OR_ALLPOS</obj_property>
-   </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/notLatch_SA_OR_latch_SA" type="logic">
       <obj_property name="ElementShortName">notLatch_SA_OR_latch_SA</obj_property>
       <obj_property name="ObjectShortName">notLatch_SA_OR_latch_SA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/chip_reset" type="logic">
+      <obj_property name="ElementShortName">chip_reset</obj_property>
+      <obj_property name="ObjectShortName">chip_reset</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/finish_spin_update" type="logic">
       <obj_property name="ElementShortName">finish_spin_update</obj_property>
@@ -93,38 +57,81 @@
       <obj_property name="ElementShortName">WE</obj_property>
       <obj_property name="ObjectShortName">WE</obj_property>
       <obj_property name="label">WE - Scan</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/PCHR" type="logic">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">PCHR</obj_property>
       <obj_property name="ObjectShortName">PCHR</obj_property>
       <obj_property name="label">PCHR - Scan</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/SA_EN" type="logic">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">SA_EN</obj_property>
       <obj_property name="ObjectShortName">SA_EN</obj_property>
       <obj_property name="label">SA_EN - Scan</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/Y_ADDR" type="array">
       <obj_property name="ElementShortName">Y_ADDR[5:0]</obj_property>
       <obj_property name="ObjectShortName">Y_ADDR[5:0]</obj_property>
    </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/fpga_reset" type="logic">
+      <obj_property name="ElementShortName">fpga_reset</obj_property>
+      <obj_property name="ObjectShortName">fpga_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/RSTn" type="logic">
+      <obj_property name="ElementShortName">RSTn</obj_property>
+      <obj_property name="ObjectShortName">RSTn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/J" type="array">
+      <obj_property name="ElementShortName">J[2:0]</obj_property>
+      <obj_property name="ObjectShortName">J[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/latch_J" type="logic">
+      <obj_property name="ElementShortName">latch_J</obj_property>
+      <obj_property name="ObjectShortName">latch_J</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/start_Ising" type="logic">
+      <obj_property name="ElementShortName">start_Ising</obj_property>
+      <obj_property name="ObjectShortName">start_Ising</obj_property>
+   </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/startScan" type="logic">
       <obj_property name="ElementShortName">startScan</obj_property>
       <obj_property name="ObjectShortName">startScan</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/RBL_bar_EN_normal_fromMain" type="logic">
+      <obj_property name="ElementShortName">RBL_bar_EN_normal_fromMain</obj_property>
+      <obj_property name="ObjectShortName">RBL_bar_EN_normal_fromMain</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/currentState" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">currentState[3:0]</obj_property>
       <obj_property name="ObjectShortName">currentState[3:0]</obj_property>
       <obj_property name="label">currentState[3:0]-main</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/currentState" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">currentState[2:0]</obj_property>
       <obj_property name="ObjectShortName">currentState[2:0]</obj_property>
       <obj_property name="label">currentState[2:0]-scan</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/this_scancol" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">this_scancol[9:0]</obj_property>
+      <obj_property name="ObjectShortName">this_scancol[9:0]</obj_property>
+      <obj_property name="label">this_scancol[9:0] - Scan</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/spin_update_EN" type="logic">
       <obj_property name="ElementShortName">spin_update_EN</obj_property>
@@ -137,12 +144,6 @@
    <wvobject fp_name="/testcase2_main_SIM/se" type="logic">
       <obj_property name="ElementShortName">se</obj_property>
       <obj_property name="ObjectShortName">se</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/this_scancol" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">this_scancol[9:0]</obj_property>
-      <obj_property name="ObjectShortName">this_scancol[9:0]</obj_property>
-      <obj_property name="label">this_scancol[9:0] - Scan</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/scan_done" type="logic">
       <obj_property name="ElementShortName">scan_done</obj_property>
@@ -169,21 +170,64 @@
       <obj_property name="ObjectShortName">currentAccessRow[6:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/thisRowValue" type="array">
-      <obj_property name="ElementShortName">thisRowValue[3:0]</obj_property>
-      <obj_property name="ObjectShortName">thisRowValue[3:0]</obj_property>
+      <obj_property name="ElementShortName">thisRowValue[100:0]</obj_property>
+      <obj_property name="ObjectShortName">thisRowValue[100:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/currentState" type="array">
-      <obj_property name="ElementShortName">currentState[2:0]</obj_property>
-      <obj_property name="ObjectShortName">currentState[2:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/inputData" type="array">
-      <obj_property name="ElementShortName">inputData[1:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">inputData[1:0][3:0]</obj_property>
+      <obj_property name="ElementShortName">inputData[0:0][100:0]</obj_property>
+      <obj_property name="ObjectShortName">inputData[0:0][100:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testcase2_main_SIM/tb2_uut/scanchain_uut/read_timer" type="array">
       <obj_property name="ElementShortName">read_timer[3:0]</obj_property>
       <obj_property name="ObjectShortName">read_timer[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/tb2_uut/RBL_bar_EN_normal_fromMain" type="logic">
+      <obj_property name="ElementShortName">RBL_bar_EN_normal_fromMain</obj_property>
+      <obj_property name="ObjectShortName">RBL_bar_EN_normal_fromMain</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testcase2_main_SIM/writeORread" type="logic">
+      <obj_property name="ElementShortName">writeORread</obj_property>
+      <obj_property name="ObjectShortName">writeORread</obj_property>
+   </wvobject>
+   <wvobject fp_name="group39" type="group">
+      <obj_property name="label">Control Signal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testcase2_main_SIM/PCHR" type="logic">
+         <obj_property name="ElementShortName">PCHR</obj_property>
+         <obj_property name="ObjectShortName">PCHR</obj_property>
+         <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/WE" type="logic">
+         <obj_property name="ElementShortName">WE</obj_property>
+         <obj_property name="ObjectShortName">WE</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/DRAM_NormalMode_EN" type="logic">
+         <obj_property name="ElementShortName">DRAM_NormalMode_EN</obj_property>
+         <obj_property name="ObjectShortName">DRAM_NormalMode_EN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/SA_EN" type="logic">
+         <obj_property name="ElementShortName">SA_EN</obj_property>
+         <obj_property name="ObjectShortName">SA_EN</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/WBACK" type="logic">
+         <obj_property name="ElementShortName">WBACK</obj_property>
+         <obj_property name="ObjectShortName">WBACK</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/normalORIsing" type="logic">
+         <obj_property name="ElementShortName">normalORIsing</obj_property>
+         <obj_property name="ObjectShortName">normalORIsing</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/RBL_EN_normal" type="logic">
+         <obj_property name="ElementShortName">RBL_EN_normal</obj_property>
+         <obj_property name="ObjectShortName">RBL_EN_normal</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testcase2_main_SIM/RBL_bar_EN_normal" type="logic">
+         <obj_property name="ElementShortName">RBL_bar_EN_normal</obj_property>
+         <obj_property name="ObjectShortName">RBL_bar_EN_normal</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

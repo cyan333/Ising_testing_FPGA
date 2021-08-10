@@ -27,7 +27,7 @@ module testcase2_main_SIM( );
     reg fpga_reset;
     
     wire sys_clk;
-    
+    wire chip_reset;
     wire PCHR; 
     wire WE; 
     wire SA_EN; 
@@ -39,6 +39,7 @@ module testcase2_main_SIM( );
     wire RBL_bar_EN_normal;
     wire REF_CTRL_WL;
     wire latch_J;
+    wire start_Ising;
     wire [2:0] J;
     wire [5:0] Y_ADDR;
     wire [6:0] X_ADDR;
@@ -46,7 +47,7 @@ module testcase2_main_SIM( );
     wire E_field;
     wire POSNEG_OR_ALLPOS;
     wire notLatch_SA_OR_latch_SA;
-    
+    wire RBL_REF_BL_or_offchip;
     wire finish_spin_update;
     wire spin_update_EN;
     
@@ -72,6 +73,7 @@ module testcase2_main_SIM( );
     .RBL_bar_EN_normal(RBL_bar_EN_normal),  
     .REF_CTRL_WL(REF_CTRL_WL),  
     .latch_J(latch_J),  
+    .start_Ising(start_Ising),
     .J(J),  
     .Y_ADDR(Y_ADDR),  
     .X_ADDR(X_ADDR),  

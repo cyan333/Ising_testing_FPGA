@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1628552773">
+  <File Type="PA-TCL" Name="testcase2_main.tcl"/>
+  <File Type="REPORTS-TCL" Name="testcase2_main_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="testcase2_main.msk"/>
+  <File Type="RDI-RDI" Name="testcase2_main.vdi"/>
+  <File Type="BG-BIT" Name="testcase2_main.bit"/>
+  <File Type="BG-DRC" Name="testcase2_main.drc"/>
+  <File Type="BG-BGN" Name="testcase2_main.bgn"/>
+  <File Type="BG-BIN" Name="testcase2_main.bin"/>
+  <File Type="BITSTR-RBT" Name="testcase2_main.rbt"/>
+  <File Type="BITSTR-NKY" Name="testcase2_main.nky"/>
+  <File Type="BITSTR-BMM" Name="testcase2_main_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="testcase2_main.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="testcase2_main.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="testcase2_main.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-HWDEF" Name="testcase2_main.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="testcase2_main_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="testcase2_main_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="testcase2_main_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="testcase2_main_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="testcase2_main_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="testcase2_main_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="testcase2_main_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="testcase2_main_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="testcase2_main_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="testcase2_main_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="testcase2_main_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="testcase2_main_postroute_physopt_bb.dcp"/>
+  <File Type="PDI-FILE" Name="testcase2_main.pdi"/>
+  <File Type="RCFI_FILE" Name="testcase2_main.rcfi"/>
+  <File Type="CFI_FILE" Name="testcase2_main.cfi"/>
+  <File Type="RNPI_FILE" Name="testcase2_main.rnpi"/>
+  <File Type="NPI_FILE" Name="testcase2_main.npi"/>
+  <File Type="RBD_FILE" Name="testcase2_main.rbd"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clock_scan_sys/clock_scan_sys.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/scan_module.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/testcase2_main.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/clk_core/clk_core.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/testcase1_teststructure.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="testcase2_main"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_2">
+    <File Path="$PSRCDIR/constrs_2/new/constrs_main.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>

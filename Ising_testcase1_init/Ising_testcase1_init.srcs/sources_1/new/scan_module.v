@@ -58,29 +58,32 @@ module scan_module(
     parameter FIRE_SA_for_READ = 4'd6;
     parameter SCANOUT = 4'd7;
     
+    parameter scan_length = 101;
+    parameter write_maxCol = scan_length;
+    parameter write_maxRow = 4'd1;
+    parameter read_maxRow = 4'd1;
+    parameter read_maxCol = scan_length;
 
     reg [2:0] currentState, nextState; 
-    reg [3:0] thisRowValue;
+    
     reg scan_done; //indicate: scan has finished for one row.
     reg [9:0] this_scancol; //track: which scan bit it is currently scanning
     reg [6:0] currentAccessRow;
     reg [1:0] update_count;
     reg didUpdateRowValue;
     reg update_done;
-    reg [3:0] inputData[1:0];
+    reg [scan_length-1:0] inputData[write_maxRow-1:0];
+    reg [scan_length-1:0] thisRowValue;
     reg last_row;
-    reg [3:0] write_maxCol, write_maxRow, read_maxRow, read_maxCol;
+//    reg [3:0] write_maxCol, write_maxRow, read_maxRow, read_maxCol;
     reg [3:0] read_timer;
     
     assign ADDR = currentAccessRow;
     
     initial begin
-        inputData[0] = 4'b1001;
-        inputData[1] = 4'b1101;
-        write_maxCol = 4'd4;
-        write_maxRow = 4'd2;
-        read_maxRow = 4'd2;
-        read_maxCol = 4'd4;
+        inputData[0] = 101'b1001100110011001100110011001100110011001100110011001;
+        inputData[1] = 101'b1101;
+        
     end
     
     always @ (negedge scan_clk) begin
@@ -168,6 +171,8 @@ module scan_module(
             PCHR <= 1;
             read_timer <= 0;
             DRAM_normalMode_EN <= 0;
+            RBL_EN_normal <= 0;
+            RBL_bar_EN_normal <= 0;
         end
         else begin
             case(currentState) 
@@ -190,6 +195,8 @@ module scan_module(
                 PCHR <= 1;
                 
                 DRAM_normalMode_EN = 0;
+                RBL_EN_normal <= 0;
+                RBL_bar_EN_normal <= 0;
             end
             UPDATE_VALUE: begin
                 thisRowValue <= inputData[currentAccessRow];
@@ -271,6 +278,8 @@ module scan_module(
                 if(this_scancol > 1) begin
                     SA_EN <= 0;
                     PCHR <= 0;
+                    RBL_EN_normal <= 0;
+                    RBL_bar_EN_normal <= 0;
                 end
                 
                 if(this_scancol < read_maxCol) begin 

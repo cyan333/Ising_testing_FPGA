@@ -3,6 +3,7 @@ set_property IOSTANDARD LVDS [get_ports sys_clk_n]
 
 set_property IOSTANDARD LVCMOS18 [get_ports {fpga_reset}]
 set_property IOSTANDARD LVCMOS18 [get_ports {sys_clk}]
+set_property IOSTANDARD LVCMOS18 [get_ports {chip_reset}]
 
 set_property IOSTANDARD LVCMOS18 [get_ports {PCHR}]
 set_property IOSTANDARD LVCMOS18 [get_ports {WE}]
@@ -15,6 +16,8 @@ set_property IOSTANDARD LVCMOS18 [get_ports {RBL_EN_normal}]
 set_property IOSTANDARD LVCMOS18 [get_ports {RBL_bar_EN_normal}]
 set_property IOSTANDARD LVCMOS18 [get_ports {REF_CTRL_WL}]
 set_property IOSTANDARD LVCMOS18 [get_ports {latch_J}]
+set_property IOSTANDARD LVCMOS18 [get_ports {start_Ising}]
+
 
 set_property IOSTANDARD LVCMOS18 [get_ports {J[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {J[1]}]
@@ -39,6 +42,8 @@ set_property IOSTANDARD LVCMOS18 [get_ports {apply_E_field}]
 set_property IOSTANDARD LVCMOS18 [get_ports {E_field}]
 set_property IOSTANDARD LVCMOS18 [get_ports {POSNEG_OR_ALLPOS}]
 set_property IOSTANDARD LVCMOS18 [get_ports {notLatch_SA_OR_latch_SA}]
+set_property IOSTANDARD LVCMOS18 [get_ports {RBL_REF_BL_or_offchip}]
+
 set_property IOSTANDARD LVCMOS18 [get_ports {finish_spin_update}]
 
 set_property IOSTANDARD LVCMOS18 [get_ports {spin_update_EN}]
@@ -57,6 +62,7 @@ set_property PACKAGE_PIN E18 [get_ports sys_clk_n]
 set_property PACKAGE_PIN AV39 [get_ports {fpga_reset}]
 
 set_property PACKAGE_PIN K39 [get_ports {sys_clk}]
+set_property PACKAGE_PIN H28 [get_ports {chip_reset}]
 
 set_property PACKAGE_PIN D33 [get_ports {PCHR}]
 set_property PACKAGE_PIN M42 [get_ports {WE}]
@@ -69,6 +75,8 @@ set_property PACKAGE_PIN M41 [get_ports {RBL_EN_normal}]
 set_property PACKAGE_PIN J36 [get_ports {RBL_bar_EN_normal}]
 set_property PACKAGE_PIN J22 [get_ports {REF_CTRL_WL}]
 set_property PACKAGE_PIN H29 [get_ports {latch_J}]
+set_property PACKAGE_PIN F34 [get_ports {start_Ising}]
+
 
 set_property PACKAGE_PIN H41 [get_ports {J[0]}]
 set_property PACKAGE_PIN H40 [get_ports {J[1]}]
@@ -93,6 +101,8 @@ set_property PACKAGE_PIN C39 [get_ports {apply_E_field}]
 set_property PACKAGE_PIN C38 [get_ports {E_field}]
 set_property PACKAGE_PIN G37 [get_ports {POSNEG_OR_ALLPOS}]
 set_property PACKAGE_PIN F32 [get_ports {notLatch_SA_OR_latch_SA}]
+set_property PACKAGE_PIN F35 [get_ports {RBL_REF_BL_or_offchip}]
+
 set_property PACKAGE_PIN G36 [get_ports {finish_spin_update}]
 
 set_property PACKAGE_PIN K28 [get_ports {spin_update_EN}]
