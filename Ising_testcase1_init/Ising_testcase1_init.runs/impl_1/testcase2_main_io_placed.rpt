@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date                      : Mon Aug  9 18:47:27 2021
+| Date                      : Thu Aug 12 19:22:18 2021
 | Host                      : ECE-D09200 running 64-bit major release  (build 9200)
 | Command                   : report_io -file testcase2_main_io_placed.rpt
 | Design                    : testcase2_main
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            44 |
+|            46 |
 +---------------+
 
 
@@ -1229,7 +1229,7 @@ Table of Contents
 | G20        |                         |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
 | G21        |                         | High Performance | IO_L4P_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | G22        |                         | High Performance | IO_L4N_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| G23        |                         | High Performance | IO_L6N_T0_VREF_36            | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| G23        | chip_reset              | High Performance | IO_L6N_T0_VREF_36            | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | G24        |                         | High Performance | IO_L1N_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | G25        |                         | High Performance | VCCO_36                      | VCCO          |             |      36 |            |      |                     |                      |      1.80 |            |           |          |      |                  |              |                   |              |
 | G26        |                         | High Performance | IO_L5P_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
@@ -1271,13 +1271,13 @@ Table of Contents
 | H20        |                         | High Performance | IO_L17N_T2_38                | User IO       |             |      38 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | H21        |                         | High Performance | IO_L2N_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | H22        |                         | High Performance | VCCO_36                      | VCCO          |             |      36 |            |      |                     |                      |      1.80 |            |           |          |      |                  |              |                   |              |
-| H23        |                         | High Performance | IO_L6P_T0_36                 | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| H23        | latch_J                 | High Performance | IO_L6P_T0_36                 | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | H24        | X_ADDR[3]               | High Performance | IO_L1P_T0_36                 | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
-| H25        |                         | High Performance | IO_L3P_T0_DQS_36             | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
-| H26        |                         | High Performance | IO_L3N_T0_DQS_36             | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| H25        | latched_SA_OUT          | High Performance | IO_L3P_T0_DQS_36             | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| H26        | charge_share            | High Performance | IO_L3N_T0_DQS_36             | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
 | H27        |                         |                  | GND                          | GND           |             |         |            |      |                     |                      |       0.0 |            |           |          |      |                  |              |                   |              |
-| H28        | chip_reset              | High Performance | IO_L9P_T1_DQS_36             | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
-| H29        | latch_J                 | High Performance | IO_L9N_T1_DQS_36             | OUTPUT        | LVCMOS18    |      36 |         16 | FAST |                     |            FP_VTT_50 |           | FIXED      |           |          |      | NONE             |              |                   |              |
+| H28        |                         | High Performance | IO_L9P_T1_DQS_36             | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
+| H29        |                         | High Performance | IO_L9N_T1_DQS_36             | User IO       |             |      36 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | H30        |                         | High Performance | IO_L8N_T1_34                 | User IO       |             |      34 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | H31        |                         | High Performance | IO_L10N_T1_34                | User IO       |             |      34 |            |      |                     |                      |           |            |           |          |      |                  |              |                   |              |
 | H32        |                         | High Performance | VCCO_34                      | VCCO          |             |      34 |            |      |                     |                      | 0.00-1.80 |            |           |          |      |                  |              |                   |              |

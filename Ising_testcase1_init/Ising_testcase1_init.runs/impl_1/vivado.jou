@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Aug  9 18:46:56 2021
-# Process ID: 21892
+# Start of session at: Thu Aug 12 19:21:46 2021
+# Process ID: 6464
 # Current directory: E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.runs/impl_1
 # Command line: vivado.exe -log testcase2_main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source testcase2_main.tcl -notrace
 # Log file: E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.runs/impl_1/testcase2_main.vdi

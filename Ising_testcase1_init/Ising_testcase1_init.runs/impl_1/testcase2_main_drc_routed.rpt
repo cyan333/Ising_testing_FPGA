@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Aug  9 18:47:57 2021
+| Date         : Thu Aug 12 19:22:47 2021
 | Host         : ECE-D09200 running 64-bit major release  (build 9200)
 | Command      : report_drc -file testcase2_main_drc_routed.rpt -pb testcase2_main_drc_routed.pb -rpx testcase2_main_drc_routed.rpx
 | Design       : testcase2_main
@@ -24,18 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 1
-+----------+----------+-------------------+------------+
-| Rule     | Severity | Description       | Violations |
-+----------+----------+-------------------+------------+
-| PDRC-153 | Warning  | Gated clock check | 1          |
-+----------+----------+-------------------+------------+
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-153#1 Warning
-Gated clock check  
-Net FSM_onehot_nextState_reg[4]_i_2_n_0 is a gated clock net sourced by a combinational pin FSM_onehot_nextState_reg[4]_i_2/O, cell FSM_onehot_nextState_reg[4]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
 

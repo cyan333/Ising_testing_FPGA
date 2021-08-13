@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Aug 10 18:48:14 2021
+# Process ID: 24296
+# Current directory: E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.sim/sim_1/behav/xsim/xsim.dir/testcase2_main_SIM_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init/Ising_testcase1_init.sim/sim_1/behav/xsim/xsim.dir/testcase2_main_SIM_behav/webtalk/xsim_webtalk.tcl -notrace

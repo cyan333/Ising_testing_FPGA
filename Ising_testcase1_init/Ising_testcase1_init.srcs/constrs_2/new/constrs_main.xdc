@@ -18,6 +18,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports {REF_CTRL_WL}]
 set_property IOSTANDARD LVCMOS18 [get_ports {latch_J}]
 set_property IOSTANDARD LVCMOS18 [get_ports {start_Ising}]
 
+set_property IOSTANDARD LVCMOS18 [get_ports {charge_share}]
 
 set_property IOSTANDARD LVCMOS18 [get_ports {J[0]}]
 set_property IOSTANDARD LVCMOS18 [get_ports {J[1]}]
@@ -52,6 +53,9 @@ set_property IOSTANDARD LVCMOS18 [get_ports {se}]
 set_property IOSTANDARD LVCMOS18 [get_ports {update_clk}]
 set_property IOSTANDARD LVCMOS18 [get_ports {scanin}]
 
+set_property IOSTANDARD LVCMOS18 [get_ports {latched_SA_OUT}]
+
+
 
 #######PACKAGE PIN########
 #Don't change package pin for clock
@@ -62,7 +66,7 @@ set_property PACKAGE_PIN E18 [get_ports sys_clk_n]
 set_property PACKAGE_PIN AV39 [get_ports {fpga_reset}]
 
 set_property PACKAGE_PIN K39 [get_ports {sys_clk}]
-set_property PACKAGE_PIN H28 [get_ports {chip_reset}]
+set_property PACKAGE_PIN G23 [get_ports {chip_reset}]
 
 set_property PACKAGE_PIN D33 [get_ports {PCHR}]
 set_property PACKAGE_PIN M42 [get_ports {WE}]
@@ -74,8 +78,10 @@ set_property PACKAGE_PIN M22 [get_ports {normalORIsing}]
 set_property PACKAGE_PIN M41 [get_ports {RBL_EN_normal}]
 set_property PACKAGE_PIN J36 [get_ports {RBL_bar_EN_normal}]
 set_property PACKAGE_PIN J22 [get_ports {REF_CTRL_WL}]
-set_property PACKAGE_PIN H29 [get_ports {latch_J}]
+set_property PACKAGE_PIN H23 [get_ports {latch_J}]
 set_property PACKAGE_PIN F34 [get_ports {start_Ising}]
+
+set_property PACKAGE_PIN H26 [get_ports {charge_share}]
 
 
 set_property PACKAGE_PIN H41 [get_ports {J[0]}]
@@ -110,6 +116,9 @@ set_property PACKAGE_PIN J40 [get_ports {scanclk_out}]
 set_property PACKAGE_PIN E32 [get_ports {se}]
 set_property PACKAGE_PIN E33 [get_ports {update_clk}]
 set_property PACKAGE_PIN P41 [get_ports {scanin}]
+
+set_property PACKAGE_PIN H25 [get_ports {latched_SA_OUT}]
+
 
 
 set_property SLEW FAST [get_ports -filter "direction==out"]

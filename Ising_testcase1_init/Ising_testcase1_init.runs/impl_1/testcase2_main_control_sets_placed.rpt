@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Mon Aug  9 18:47:28 2021
+| Date         : Thu Aug 12 19:22:18 2021
 | Host         : ECE-D09200 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file testcase2_main_control_sets_placed.rpt
 | Design       : testcase2_main
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    18 |
-|    Minimum number of control sets                        |    18 |
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    95 |
+| Unused register locations in slices containing registers |   110 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    18 |
-| >= 0 to < 4        |    11 |
-| >= 4 to < 6        |     3 |
-| >= 6 to < 8        |     0 |
+| Total control sets |    19 |
+| >= 0 to < 4        |    12 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     2 |
-| >= 10 to < 12      |     2 |
-| >= 12 to < 14      |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     0 |
 +--------------------+-------+
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               7 |            4 |
-| No           | No                    | Yes                    |              16 |            7 |
+| No           | No                    | No                     |               0 |            0 |
+| No           | No                    | Yes                    |              22 |           10 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              42 |           19 |
+| Yes          | No                    | No                     |               1 |            1 |
+| Yes          | No                    | Yes                    |              51 |           19 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,27 +70,28 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------------------+------------------------------------------+------------------+------------------+----------------+--------------+
-|             Clock Signal             |               Enable Signal              | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------------------------------+------------------------------------------+------------------+------------------+----------------+--------------+
-| ~clk_core_uut/inst/CLK_10M           |                                          |                  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/DRAM_normalMode_EN_i_1_n_0 | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/PCHR_i_1_n_0               | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/scanin_i_1_n_0             | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/se0                        | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/SA_EN_i_1_n_0              | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/WE_i_1_n_0                 | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-|  clk_core_uut/inst/CLK_25M           |                                          |                  |                1 |              1 |         1.00 |
-|  clk_core_uut/inst/CLK_25M           | PCHR_fromMain                            | fpga_reset_IBUF  |                1 |              1 |         1.00 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/RBL_EN_normal_i_1_n_0      | fpga_reset_IBUF  |                1 |              2 |         2.00 |
-|  clk_core_uut/inst/CLK_10M           |                                          | fpga_reset_IBUF  |                2 |              3 |         1.50 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/read_timer[3]_i_1_n_0      | fpga_reset_IBUF  |                1 |              4 |         4.00 |
-|  FSM_onehot_nextState_reg[4]_i_2_n_0 |                                          |                  |                2 |              5 |         2.50 |
-| ~clk_core_uut/inst/CLK_25M           |                                          | fpga_reset_IBUF  |                2 |              5 |         2.50 |
-| ~clk_core_uut/inst/CLK_10M           |                                          | fpga_reset_IBUF  |                3 |              8 |         2.67 |
-| ~clk_core_uut/inst/CLK_10M           | scanchain_uut/this_scancol_1             | fpga_reset_IBUF  |                4 |              8 |         2.00 |
-|  clk_core_uut/inst/CLK_25M           | FSM_onehot_nextState_reg[4]_i_2_n_0      | fpga_reset_IBUF  |                2 |             10 |         5.00 |
-|  clk_core_uut/inst/CLK_25M           | idle_counter[8]_i_1_n_0                  | fpga_reset_IBUF  |                4 |             11 |         2.75 |
-+--------------------------------------+------------------------------------------+------------------+------------------+----------------+--------------+
++----------------------------+---------------------------------------+------------------+------------------+----------------+--------------+
+|        Clock Signal        |             Enable Signal             | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------+---------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_core_uut/inst/CLK_25M | X_ADDR[0]_i_1_n_0                     |                  |                1 |              1 |         1.00 |
+|  clk_core_uut/inst/CLK_25M | WBACK_i_1_n_0                         | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+|  clk_core_uut/inst/CLK_25M | normalORIsing_i_1_n_0                 | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+|  clk_core_uut/inst/CLK_25M | charge_share_i_1_n_0                  | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+|  clk_core_uut/inst/CLK_25M | start_Ising_i_1_n_0                   | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+| ~clk_core_uut/inst/CLK_25M | latched_SA_OUT_i_1_n_0                | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+| ~clk_core_uut/inst/CLK_10M | scanchain_uut/WE_i_1_n_0              | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+| ~clk_core_uut/inst/CLK_10M | scanchain_uut/se_i_1_n_0              | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+| ~clk_core_uut/inst/CLK_10M | scanchain_uut/scanin_i_1_n_0          | fpga_reset_IBUF  |                1 |              1 |         1.00 |
+|  clk_core_uut/inst/CLK_25M |                                       | fpga_reset_IBUF  |                2 |              3 |         1.50 |
+|  clk_core_uut/inst/CLK_25M | J[2]_i_1_n_0                          | fpga_reset_IBUF  |                2 |              3 |         1.50 |
+| ~clk_core_uut/inst/CLK_25M |                                       | fpga_reset_IBUF  |                2 |              3 |         1.50 |
+|  clk_core_uut/inst/CLK_10M |                                       | fpga_reset_IBUF  |                1 |              4 |         4.00 |
+|  clk_core_uut/inst/CLK_25M | WE_fromMain                           | fpga_reset_IBUF  |                2 |              5 |         2.50 |
+|  clk_core_uut/inst/CLK_25M | start_ising_counter[6]_i_1_n_0        | fpga_reset_IBUF  |                1 |              7 |         7.00 |
+|  clk_core_uut/inst/CLK_25M | idle_counter[8]_i_1_n_0               | fpga_reset_IBUF  |                2 |              9 |         4.50 |
+| ~clk_core_uut/inst/CLK_10M | scanchain_uut/this_scancol[7]_i_1_n_0 | fpga_reset_IBUF  |                2 |              9 |         4.50 |
+|  clk_core_uut/inst/CLK_25M | scan_counter[8]_i_1_n_0               | fpga_reset_IBUF  |                2 |             10 |         5.00 |
+| ~clk_core_uut/inst/CLK_10M |                                       | fpga_reset_IBUF  |                5 |             12 |         2.40 |
++----------------------------+---------------------------------------+------------------+------------------+----------------+--------------+
 
 

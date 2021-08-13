@@ -54,8 +54,9 @@ module testcase2_main(
     output scanclk_out,
     output se,
     output update_clk,
-    output scanin
-    
+    output scanin,
+    output reg charge_share,
+    output reg latched_SA_OUT
 
     );
     
@@ -70,32 +71,37 @@ module testcase2_main(
     parameter REF_GEN = 8;
     parameter START_DO_ISING = 9;
     
+    parameter RESET_BEFORE_LATCH_J_TO_DIG2 = 10;
+    
     parameter read_maxRow = 2;
     
-    parameter [8:0] set_J = 9'b010000001;
+    parameter [8:0] set_J = 9'b111101111;
     
     //reg
+    reg latch_J_posedge;
     reg [3:0] currentState, nextState;
     reg [8:0] idle_counter, scan_counter;
     reg [4:0] currentReadRow;
     reg WE_fromMain, PCHR_fromMain, DRAM_EN_fromMain, SA_EN_fromMain, RBL_bar_EN_normal_fromMain;
     reg startScan;
-    reg Y_ADDR_fromMain;
+    reg [5:0] Y_ADDR_fromMain;
     reg read_write_flag;
     reg RSTn;
-    reg [2:0] latch_J_counter;
-    reg [4:0] start_ising_counter;
-    reg latch_J_posedge;
+    reg [3:0] latch_J_counter;
+    reg [6:0] start_ising_counter;
+    
     reg RBL_EN_normal_fromMain;
     
     wire scan_done;
     wire writeORread_toscan;
     wire WE_fromScan, PCHR_fromScan, DRAM_EN_fromScan, SA_EN_fromScan, RBL_EN_normal_fromScan, RBL_bar_EN_normal_fromScan;
-    wire Y_ADDR_fromScan;
+    wire [5:0] Y_ADDR_fromScan;
     wire locked;
     wire clk_25M;
     wire clk_10M;
+    wire clk_40M;
     wire scan_clk_EN;
+    wire last_row;
     
     clock_scan_sys clk_core_uut( 
     .clk_in1_p(sys_clk_p), 
@@ -103,6 +109,7 @@ module testcase2_main(
     .reset(fpga_reset), 
     .CLK_25M(clk_25M), 
     .CLK_10M(clk_10M),
+    .CLK_40M(clk_40M),
     .locked(locked)
     );
     
@@ -145,7 +152,8 @@ module testcase2_main(
     .PCHR(PCHR_fromScan),
     .DRAM_normalMode_EN(DRAM_EN_fromScan),
     .RBL_EN_normal(RBL_EN_normal_fromScan),
-    .RBL_bar_EN_normal(RBL_bar_EN_normal_fromScan)
+    .RBL_bar_EN_normal(RBL_bar_EN_normal_fromScan),
+    .last_row(last_row)
     );
     
     
@@ -154,22 +162,20 @@ module testcase2_main(
         else currentState <= nextState;
     end
     
-    always @ (currentState or idle_counter or read_write_flag or scan_counter or scan_done or start_ising_counter or latch_J_counter) begin
+    always @ (currentState or idle_counter or read_write_flag or scan_counter or scan_done or start_ising_counter or latch_J_counter or last_row) begin
     case (currentState) 
     IDLE: begin
         if(idle_counter < 20) begin
            nextState = IDLE;
         end
         else begin
-//            nextState = SCAN_WRITE;
-            if(!read_write_flag) begin
-                
-                nextState = SCAN_WRITE;
-            end
-            else begin
-                
-                nextState = SCAN_READ;
-            end
+            nextState = SCAN_WRITE;
+//            if(!read_write_flag) begin
+//                nextState = SCAN_WRITE;
+//            end
+//            else begin
+//                nextState = SCAN_READ;
+//            end
         end
     end
     SCAN_WRITE: begin
@@ -183,7 +189,7 @@ module testcase2_main(
     end
     DISABLE_SCAN_WRITE: begin
 //        if(scan_done == 1'b1) nextState = IDLE;
-        if(scan_done == 1'b1) nextState = SCAN_READ;
+        if(last_row == 1'b1) nextState = RESET_BEFORE_LATCH_J_TO_DIG;
         else nextState = DISABLE_SCAN_WRITE;
     end
     SCAN_READ: begin
@@ -196,10 +202,13 @@ module testcase2_main(
     end
     
     DISABLE_SCAN_READ: begin
-        if(scan_done == 1'b1) nextState = IDLE;
+        if(last_row == 1'b1) nextState = IDLE;
         else nextState = DISABLE_SCAN_READ;
     end
     RESET_BEFORE_LATCH_J_TO_DIG: begin
+        nextState = RESET_BEFORE_LATCH_J_TO_DIG2;
+    end
+    RESET_BEFORE_LATCH_J_TO_DIG2: begin
         nextState = LATCH_J_TO_DIG;
     end
     LATCH_J_TO_DIG: begin
@@ -211,13 +220,13 @@ module testcase2_main(
         end
     end
     PRECHARGE: begin
-        nextState = REF_GEN;
+        nextState = START_DO_ISING;
     end
     REF_GEN: begin
         nextState = START_DO_ISING;
     end
     START_DO_ISING: begin
-        if(start_ising_counter < 10) begin
+        if(start_ising_counter < 100) begin
             nextState = START_DO_ISING;
         end
         else begin
@@ -228,6 +237,24 @@ module testcase2_main(
     endcase
     end
     
+    always @ (negedge sys_clk or posedge fpga_reset) begin
+    if(fpga_reset) begin
+        latched_SA_OUT <= 0;
+    end
+    else begin
+    case (currentState) 
+    IDLE: begin
+        latched_SA_OUT <= 0;
+    end
+    START_DO_ISING: begin
+        if(start_ising_counter == 7) begin
+            latched_SA_OUT <= 1;
+        end
+    end
+    
+    endcase
+    end
+    end
     always @ (posedge sys_clk or posedge fpga_reset) begin
     if(fpga_reset) begin
         RSTn <= 1;
@@ -254,6 +281,8 @@ module testcase2_main(
         RBL_REF_BL_or_offchip <= 1'b1;
         start_ising_counter <= 0;
         J <= 3'b0;
+        charge_share <= 0;
+        
     end
     else begin
         case (currentState) 
@@ -281,6 +310,8 @@ module testcase2_main(
             RBL_REF_BL_or_offchip <= 1'b1;
             start_ising_counter <= 0;
             J <= 3'b0;
+            latch_J_counter <= 0;
+            charge_share <= 0;
         end
         
         SCAN_WRITE: begin
@@ -295,7 +326,7 @@ module testcase2_main(
         DISABLE_SCAN_WRITE: begin
             startScan <= 1'b0;
             scan_counter <= 0;
-            RSTn <= 1;
+            RSTn <= 0;
         end
         
         SCAN_READ: begin
@@ -313,17 +344,22 @@ module testcase2_main(
         end
         
         RESET_BEFORE_LATCH_J_TO_DIG: begin
+            RSTn <= 0;
+            
+        end
+        RESET_BEFORE_LATCH_J_TO_DIG: begin
             RSTn <= 1;
             
         end
         LATCH_J_TO_DIG: begin
+            RSTn <= 1;
             WE_fromMain <= 0;
             finish_spin_update <= 0;
             normalORIsing <= 1;
             DRAM_EN_fromMain <= 1;
             latch_J_posedge <= 1;
             if(latch_J_counter == 1) begin
-                J = set_J[8:6];
+                J <= set_J[8:6];
             end
             else if(latch_J_counter == 2) begin
                 J = set_J[5:3];
@@ -338,6 +374,7 @@ module testcase2_main(
             latch_J_counter <= latch_J_counter + 1'b1;
         end
         PRECHARGE: begin
+            latch_J_counter <= 0;
             latch_J_posedge <= 0;
             PCHR_fromMain <= 0;
             WE_fromMain <= 0;
@@ -350,8 +387,35 @@ module testcase2_main(
 //            REF_CTRL_WL <= 1;
         end
         START_DO_ISING: begin
-            start_Ising <= 1;
+            PCHR_fromMain <= 1;
+            if(start_ising_counter > 0) begin
+                start_Ising <= 0;
+            end
+            else begin
+                start_Ising <= 1;
+            end
             
+            if(start_ising_counter == 5) begin
+                charge_share <= 1;
+            end
+            else if(start_ising_counter == 8) begin
+                charge_share <= 0;
+            end
+            
+            
+//            else if(start_ising_counter == 6) begin
+//                latched_SA_OUT <= 0;
+//            end
+            
+            if(start_ising_counter == 9) begin
+                normalORIsing <= 0;
+                WBACK <= 1;
+            end
+            else if(start_ising_counter == 10) begin
+                WBACK <= 0;
+                
+            end
+ 
             start_ising_counter <= start_ising_counter + 1'b1;
         end
         endcase

@@ -41,8 +41,9 @@ module scan_module(
     output reg update_clk_EN,
     output reg all_scan_done,
     
-    output [6:0] ADDR,
-    output reg WE, SA_EN, PCHR, DRAM_normalMode_EN, RBL_EN_normal, RBL_bar_EN_normal
+    output [5:0] ADDR,
+    output reg WE, SA_EN, PCHR, DRAM_normalMode_EN, RBL_EN_normal, RBL_bar_EN_normal,
+    output reg last_row
 
     );
     
@@ -58,32 +59,42 @@ module scan_module(
     parameter FIRE_SA_for_READ = 4'd6;
     parameter SCANOUT = 4'd7;
     
-    parameter scan_length = 101;
+    parameter scan_length = 207;
     parameter write_maxCol = scan_length;
-    parameter write_maxRow = 4'd1;
-    parameter read_maxRow = 4'd1;
-    parameter read_maxCol = scan_length;
+    parameter write_maxRow = 4'd6;
+    parameter read_maxRow = 4'd6;
+    parameter read_maxCol = 101;
 
     reg [2:0] currentState, nextState; 
     
     reg scan_done; //indicate: scan has finished for one row.
     reg [9:0] this_scancol; //track: which scan bit it is currently scanning
-    reg [6:0] currentAccessRow;
+    reg [5:0] currentAccessRow;
     reg [1:0] update_count;
     reg didUpdateRowValue;
     reg update_done;
-    reg [scan_length-1:0] inputData[write_maxRow-1:0];
+    
+    // Memeory input data
+    reg [207-1:0] inputData[write_maxRow-1:0];
+    
+    reg [scan_length-1:0] totalScanData[write_maxRow-1:0];
     reg [scan_length-1:0] thisRowValue;
-    reg last_row;
+    reg [4:0] ONE_BANK_HEIGHT;
+
 //    reg [3:0] write_maxCol, write_maxRow, read_maxRow, read_maxCol;
     reg [3:0] read_timer;
     
     assign ADDR = currentAccessRow;
     
     initial begin
-        inputData[0] = 101'b1001100110011001100110011001100110011001100110011001;
-        inputData[1] = 101'b1101;
+        inputData[0] = 101'b0;
+        inputData[1] = 101'b0;
+        inputData[2] = 101'b0;
         
+        inputData[3] = 101'b0;
+        inputData[4] = 101'b0;
+        inputData[5] = 101'b0;
+
     end
     
     always @ (negedge scan_clk) begin
@@ -173,6 +184,8 @@ module scan_module(
             DRAM_normalMode_EN <= 0;
             RBL_EN_normal <= 0;
             RBL_bar_EN_normal <= 0;
+            
+            
         end
         else begin
             case(currentState) 
@@ -197,9 +210,21 @@ module scan_module(
                 DRAM_normalMode_EN = 0;
                 RBL_EN_normal <= 0;
                 RBL_bar_EN_normal <= 0;
+                
+                ONE_BANK_HEIGHT <= 5'd3;
+                totalScanData[0] <= ONE_BANK_HEIGHT << 101 | inputData[0];
+                totalScanData[1] <= ONE_BANK_HEIGHT << 101 | inputData[1];
+                totalScanData[2] <= ONE_BANK_HEIGHT << 101 | inputData[2];
+                
+                totalScanData[3] <= ONE_BANK_HEIGHT << 101 | inputData[3];
+                totalScanData[4] <= ONE_BANK_HEIGHT << 101 | inputData[4];
+                totalScanData[5] <= ONE_BANK_HEIGHT << 101 | inputData[5];
+                
             end
             UPDATE_VALUE: begin
-                thisRowValue <= inputData[currentAccessRow];
+            
+//                thisRowValue <= totalScanData[currentAccessRow];
+                thisRowValue <= (ONE_BANK_HEIGHT << 101) | inputData[currentAccessRow];
                 didUpdateRowValue <= 1;
                 update_count <= 0;
                 update_done <= 0;
@@ -240,10 +265,12 @@ module scan_module(
                     update_done <= 1;
                     if(currentAccessRow < write_maxRow-1) begin
                         last_row <= 1'b0;
+                        scan_done <= 0; 
                         currentAccessRow <= currentAccessRow + 1;
                     end
                     else begin
                         last_row <= 1'b1;
+                        scan_done <= 1; 
                         currentAccessRow <= 0;
                     end 
                 end

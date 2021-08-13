@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1628552773">
+<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1628814062">
   <File Type="PA-TCL" Name="testcase2_main.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="testcase2_main_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="testcase2_main_reports.tcl"/>
   <File Type="RDS-RDS" Name="testcase2_main.vds"/>
+  <File Type="RDS-UTIL" Name="testcase2_main_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="testcase2_main_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="testcase2_main.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="testcase2_main_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="testcase2_main_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/clock_scan_sys/clock_scan_sys.xci">
