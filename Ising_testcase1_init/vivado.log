@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Aug 13 13:22:48 2021
+# Process ID: 13020
+# Current directory: C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25492 C:\Users\iamcy\Box\Shanshan_Xie\Testing\2-2021Ising_FPGA\Ising_testing_FPGA\Ising_testcase1_init\Ising_testcase1_init.xpr
+# Log file: C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/vivado.log
+# Journal file: C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init'
+INFO: [Project 1-313] Project file moved from 'E:/Shanshan_Xie/1-Ising_2021/1-Test/FPGA/codeFromHome/Ising_testcase1_init' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1044.758 ; gain = 29.734
+update_compile_order -fileset sources_1
+close [ open C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase3_annealing.v w ]
+add_files C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/testcase3_annealing.v
+update_compile_order -fileset sources_1
+set_property top testcase3_annealing [current_fileset]
+update_compile_order -fileset sources_1
+close [ open C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/Scan_annealing.v w ]
+add_files C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sources_1/new/Scan_annealing.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sim_1/new/testcase3_annealing_SIM.v w ]
+add_files -fileset sim_1 C:/Users/iamcy/Box/Shanshan_Xie/Testing/2-2021Ising_FPGA/Ising_testing_FPGA/Ising_testcase1_init/Ising_testcase1_init.srcs/sim_1/new/testcase3_annealing_SIM.v
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\iamcy\Box\Shanshan_Xie\Testing\2-2021Ising_FPGA\Ising_testing_FPGA\Ising_testcase1_init\Ising_testcase1_init.srcs\sources_1\new\testcase3_annealing.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\iamcy\Box\Shanshan_Xie\Testing\2-2021Ising_FPGA\Ising_testing_FPGA\Ising_testcase1_init\Ising_testcase1_init.srcs\sources_1\new\Scan_annealing.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 13 17:46:37 2021...

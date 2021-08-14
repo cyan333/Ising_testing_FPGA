@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys" --include "../../../../Ising_testcase1_init.gen/sources_1/ip/clk_core" \
+verilog xil_defaultlib  --include "../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys" \
 "../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys/clock_scan_sys_clk_wiz.v" \
 "../../../../Ising_testcase1_init.gen/sources_1/ip/clock_scan_sys/clock_scan_sys.v" \
 "../../../../Ising_testcase1_init.srcs/sources_1/new/scan_module.v" \

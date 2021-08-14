@@ -1,80 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7vx485tffg1761-2" LaunchTime="1628814062">
-  <File Type="BITSTR-BMM" Name="testcase2_main_bd.bmm"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="testcase2_main_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="testcase2_main_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR" Name="testcase2_main_power_routed.rpt"/>
   <File Type="PA-TCL" Name="testcase2_main.tcl"/>
-  <File Type="OPT-TIMING" Name="testcase2_main_timing_summary_opted.rpt"/>
-  <File Type="OPT-DCP" Name="testcase2_main_opt.dcp"/>
-  <File Type="ROUTE-PWR-SUM" Name="testcase2_main_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="testcase2_main_reports.tcl"/>
-  <File Type="OPT-DRC" Name="testcase2_main_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="testcase2_main.hwdef"/>
-  <File Type="PWROPT-DCP" Name="testcase2_main_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="testcase2_main_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="testcase2_main_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="testcase2_main_placed.dcp"/>
-  <File Type="PLACE-IO" Name="testcase2_main_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="testcase2_main_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="testcase2_main_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="testcase2_main_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="testcase2_main_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="testcase2_main_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="testcase2_main_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="testcase2_main_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="testcase2_main_postplace_pwropt.dcp"/>
-  <File Type="BG-BIN" Name="testcase2_main.bin"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="testcase2_main_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="testcase2_main_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="testcase2_main_drc_physopted.rpt"/>
   <File Type="BITSTR-MSK" Name="testcase2_main.msk"/>
-  <File Type="PHYSOPT-TIMING" Name="testcase2_main_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="testcase2_main_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="testcase2_main_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="testcase2_main_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="testcase2_main_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="testcase2_main_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="testcase2_main_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="testcase2_main.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="testcase2_main_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="testcase2_main_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="testcase2_main_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="testcase2_main_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="testcase2_main_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="testcase2_main_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="testcase2_main_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="testcase2_main_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="testcase2_main_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="testcase2_main_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="testcase2_main_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="testcase2_main_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="testcase2_main_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="testcase2_main_bus_skew_routed.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="testcase2_main_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="testcase2_main_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="testcase2_main_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="testcase2_main_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="testcase2_main_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="testcase2_main_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="testcase2_main_bus_skew_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="testcase2_main.vdi"/>
   <File Type="BG-BIT" Name="testcase2_main.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="testcase2_main_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-DRC" Name="testcase2_main.drc"/>
+  <File Type="BG-BGN" Name="testcase2_main.bgn"/>
+  <File Type="BG-BIN" Name="testcase2_main.bin"/>
   <File Type="BITSTR-RBT" Name="testcase2_main.rbt"/>
   <File Type="BITSTR-NKY" Name="testcase2_main.nky"/>
-  <File Type="PDI-FILE" Name="testcase2_main.pdi"/>
+  <File Type="BITSTR-BMM" Name="testcase2_main_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="testcase2_main.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="testcase2_main.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="testcase2_main.ltx"/>
   <File Type="RCFI_FILE" Name="testcase2_main.rcfi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-HWDEF" Name="testcase2_main.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="testcase2_main_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="testcase2_main_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="testcase2_main_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="testcase2_main_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="testcase2_main_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="testcase2_main_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="testcase2_main_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="testcase2_main_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="testcase2_main_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="testcase2_main_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="testcase2_main_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="testcase2_main_postroute_physopt_bb.dcp"/>
+  <File Type="PDI-FILE" Name="testcase2_main.pdi"/>
   <File Type="CFI_FILE" Name="testcase2_main.cfi"/>
   <File Type="RNPI_FILE" Name="testcase2_main.rnpi"/>
   <File Type="NPI_FILE" Name="testcase2_main.npi"/>
   <File Type="RBD_FILE" Name="testcase2_main.rbd"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="testcase2_main.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="testcase2_main.sysdef"/>
-  <File Type="BG-BGN" Name="testcase2_main.bgn"/>
-  <File Type="BG-DRC" Name="testcase2_main.drc"/>
-  <File Type="RDI-RDI" Name="testcase2_main.vdi"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/clock_scan_sys/clock_scan_sys.xci">
@@ -147,5 +107,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>
